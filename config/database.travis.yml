@@ -1,0 +1,4 @@
+test:
+  adapter: postgresql
+  database: Railblazers_test
+  username: postgres
