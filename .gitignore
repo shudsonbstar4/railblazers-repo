@@ -16,3 +16,6 @@
 /tmp
 config/database.yml
 vendor/bundle
+
+#Ignore .env file
+.env

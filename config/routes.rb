@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :rsvps
+
+  resources :events
+
   root to: 'welcome#index'
   get 'welcome/index'
 
