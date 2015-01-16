@@ -4,8 +4,8 @@ class CreateGroups < ActiveRecord::Migration
       t.string :name
       t.integer :group_id
       t.text :description
-      t.array :admin
-      t.array :members
+      t.integer :admin, array: true, default: []
+      t.integer :members, array: true, default: []
 
       t.timestamps
     end
