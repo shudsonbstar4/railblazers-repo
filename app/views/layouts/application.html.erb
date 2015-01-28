@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" <%= image_tag "logo.png" %>>
-    <title><%= content_for(:title) || "Jumbotron Template for Bootstrap" %></title>
+    <title><%= content_for(:title) || "UpMeet. Get connected. Be social. NOT MEETUP." %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -34,11 +34,11 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index">Home</a></li>
+            <li><a href="about">About Us</a></li>
+            <li><a href="faq">FAQ</a></li>
+            <li><a href="blog">Blog</a></li>
+            <li><a href="contact">Contact</a></li>
             <li class="dropdown">
               <ul class="dropdown-menu">
                         <% if user_signed_in? %>
@@ -88,9 +88,6 @@
     <%= yield %>
       <hr>
 
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
     </div> <!-- /container -->
 
   </body>
