@@ -1,29 +1,86 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @event.user_id %>
-</p>
+<div class="col-md-12 content-background">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1><%= @event.title %></h1>
+        <ul class="breadcrumb">
+          <li><%= link_to 'Events', events_path %></li>
+          <li> <%= link_to @event.title, @event %></li>
+        </ul>
+      </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+      <div role="tabpanel">
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Overview</a></li>
+          <li role="presentation"><a href="#chat" aria-controls="chat" role="tab" data-toggle="tab">Chat <span class="badge badge-alert">4</span></a></li>
+        </ul>
 
-<p>
-  <strong>Starts at:</strong>
-  <%= @event.starts_at %>
-</p>
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="overview">
+            <div class="clear-space"></div>
+              <div class="row">
+                <div class="col-md-2">
+                  <img src="http://placehold.it/150x150" alt="placeholder" />
+                  <h4 class="text-center">
+                    <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_event_path(@event) %>
+                    <%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, @event, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  </h4>
+                </div>
+                <div class="col-md-10">
+                  <h2 class="custom-heading"><%= @event.title %></h2>
+                  <h4 class="custom-heading">{{selectedEvent.group}}</h4>
+                  <p><%= @event.description %></p>
+                  <p>
+                    <em>
+                      <%= @event.starts_at.strftime("%A, %B %d, %Y") %><br />
+                      <%= @event.starts_at.strftime(" %I:%M %p") %> - <%= @event.ends_at.strftime(" %I:%M %p") %><br />
+                      {{selectedEvent.location}}<br />
+                      <!--<a popover-placement="right" popover="Sample text<br />Sample text" popover-title="Members Going" href>{{selectedEvent.rsvps}} Members Going</a>-->
+                      <a  data-toggle="popover" title="Members Going" data-content="[45] members going">[45] Members Going</a>
+                    </em>
+                  </p>
+                </div>
+              </div>
+            <!--<p>
+              <strong>User:</strong>
+              <%= @event.user_id %>
+            </p>
 
-<p>
-  <strong>Ends at:</strong>
-  <%= @event.ends_at %>
-</p>
+            <p>
+              <strong>Title:</strong>
+              <%= @event.title %>
+            </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+            <p>
+              <strong>Description:</strong>
+              <%= @event.description %>
+            </p>
+
+            <p>
+              <strong>Starts at:</strong>
+              <%= @event.starts_at %>
+            </p>
+
+            <p>
+              <strong>Ends at:</strong>
+              <%= @event.ends_at %>
+            </p>
+
+            <%= link_to 'Edit', edit_event_path(@event) %> |
+            <%= link_to 'Back', events_path %>-->
+
+          </div>
+          <div role="tabpanel" class="tab-pane" id="chat">...</div>
+
+        </div>
+        <div class="clear-space"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
