@@ -1,0 +1,135 @@
+<!--<div class="row" ng-view>
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand"><img src="assets/img/logo.png" alt="Railblazers" height="45px" /></a>
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="my-groups.html">Groups</a></li>
+        <li class="active"><a href="events.html">Events</a></li>
+      </ul>
+    </div>
+    <div class="nav navbar-nav navbar-right">
+      <span class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" id="dropdownMenu1">
+            <img src="http://placehold.it/35x35" alt="avatar" class="img-circle" />
+            <span class="caret"></span>
+          </a>
+          
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="dashboard-settings.html">Settings</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="dashboard-subscription.html">Subscription</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="my-events.html">My Events</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="my-groups.html">My Groups</a></li>
+        </ul>
+      </span>
+      <button class="btn btn-default">Sign Out</button>
+
+    </div>
+  </div>
+</nav>-->
+
+
+  <!-- Main div -->
+  <div class="col-md-12 content-background">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>Events</h1>
+          <ul class="breadcrumb">
+            <li><%= link_to 'Events', events_path %></li>
+          </ul>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="clear-space"></div>
+          <!--<button class="btn btn-success green" ng-controller="CreateEventModalController" ng-click="openCreateEvent()">
+            Create New Event <i class="glyphicon glyphicon-plus"></i> 
+          </button>-->
+          <%= link_to "<button class='btn btn-success green'><i class='glyphicon glyphicon-plus'></i> Create a New Event</button>".html_safe, new_event_path %>
+        </div>
+      </div>
+      
+      <!-- First form -->
+      <% @events.each do |event| %>
+        <div class="row">
+          <div class="col-md-2">
+            <img src="http://placehold.it/150x150" alt="placeholder" />
+            <h4 class="text-center">
+              <!--<a href ng-controller="EditEventModalController" ng-click="openEditEvent(event)"><i class="glyphicon glyphicon-pencil"></i></a>
+              <a href ng-controller="CancelEventModalController" ng-click="openCancelEventModal(event)"><i class="glyphicon glyphicon-trash"></i></a>
+              -->
+              <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_event_path(event) %>
+              <%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, event, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </h4>
+          </div>
+          <div class="col-md-10">
+            <h2 class="custom-heading"><%= link_to event.title, event %></h2>
+            <h4 class="custom-heading">{{event.group}}</h4>
+            <p><%= event.description %></p>
+            <p>
+              <em>
+                <%= event.starts_at.strftime("%A, %B %d, %Y") %><br />
+                <%= event.starts_at.strftime(" %I:%M %p") %> - <%= event.ends_at.strftime(" %I:%M %p") %><br />
+                {{event.location}}<br />
+                <a popover-placement="right" popover="Sample text<br />Sample text" popover-title="Members Going" href>{{event.rsvps}} Members Going</a>
+              </em>
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div class="clear-space"></div>
+      <% end %>
+
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+
+          <%= link_to "<button class='btn btn-success green btn-block text-center'><i class='glyphicon glyphicon-plus'></i> Create a New Event</button>".html_safe, new_event_path %>
+
+          <!--<button class="btn btn-success green btn-block text-center" ng-controller="CreateEventModalController" ng-click="openCreateEvent()">
+            <i class="glyphicon glyphicon-plus"></i> Create a New Event
+          </button>-->
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+      <div class="clear-space"></div>
+
+    </div><!--container-->
+  </div>
+
+<!--</div>-->
+
+
+
+
+
+<!--<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Starts at</th>
+      <th>Ends at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.user_id %></td>
+        <td><%= event.title %></td>
+        <td><%= event.description %></td>
+        <td><%= event.starts_at %></td>
+        <td><%= event.ends_at %></td>
+        <td><%= link_to 'Show', event %></td>
+        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Event', new_event_path %>-->

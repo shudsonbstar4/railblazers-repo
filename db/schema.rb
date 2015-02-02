@@ -11,7 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150107003654) do
+
+ActiveRecord::Schema.define(version: 20150114005104) do
+>>>>>>> 20868b9c2205b1c6fa18f7bbf39e1538f6a5ee95
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +24,16 @@ ActiveRecord::Schema.define(version: 20150107003654) do
     t.text     "description"
     t.datetime "starts_at"
     t.datetime "ends_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groups", force: true do |t|
+    t.string   "name"
+    t.integer  "group_id"
+    t.text     "description"
+    t.integer  "admin",       default: [], array: true
+    t.integer  "members",     default: [], array: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -43,6 +55,7 @@ ActiveRecord::Schema.define(version: 20150107003654) do
     t.integer  "guest_count"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "event_name"
   end
 
   create_table "users", force: true do |t|
@@ -58,7 +71,18 @@ ActiveRecord::Schema.define(version: 20150107003654) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
+
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "username"
+    t.string   "address_street"
+    t.string   "address_city"
+    t.string   "address_state"
+    t.string   "address_zip"
+    t.text     "bio"
+    t.boolean  "show"
+    t.string   "plan_type"
+
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree

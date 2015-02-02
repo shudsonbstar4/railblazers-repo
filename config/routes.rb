@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  resources :groups
+
+  resources :rsvps
+
+  resources :events
+
+  resources :welcome
+
+  get 'index' => 'welcome#index'
+  get 'about' => 'welcome#about'
+  get 'faq' => 'welcome#faq'
+  get 'blog' => 'welcome#blog'
+  get 'contact' => 'welcome#contact'
+  get 'privacy' => 'welcome#privacy'
+  get 'tos' => 'welcome#tos'
+
   root to: 'welcome#index'
   get 'welcome/index'
 
