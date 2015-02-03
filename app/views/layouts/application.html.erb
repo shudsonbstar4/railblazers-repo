@@ -46,7 +46,7 @@
               <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
               </li>
         <% else %>
-          <li>
+              <li>
               <%= link_to "Sign In", new_user_session_path %>
               </li>
               <li>
@@ -69,14 +69,17 @@
                 <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
               </div>
               <button type="submit" class="btn btn-success">Sign in</button>
-              <%= link_to new_user_registration_path do %>
+              <%= link_to new_user_session_path do %>
                   <button type="submit" class="btn btn-primary">Sign up</button>
+              <%= link_to new_user_registration_path do %>
+               <% end %>
               <% end %>
             <% end %>
           <% end %>
         </div><!--/.navbar-collapse -->
       </div>
     </div>
+
 
     <div class="container">
      <div class="flash">
