@@ -71,9 +71,7 @@ h1{
   margin-top:-15px;
 }
 
-.navbar-right > button, .navbar-right > img {
-  margin-top:7px;
-  margin-right:5px;
+.navbar-right > button, .navbar-right img {
 }
 
 .remove-margin{
