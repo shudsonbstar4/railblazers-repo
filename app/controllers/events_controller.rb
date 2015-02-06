@@ -5,6 +5,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @event = Event.new
     respond_with(@events)
   end
 
