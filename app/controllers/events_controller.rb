@@ -5,6 +5,8 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @event = Event.new
+    #@event_modal = Event.new(event_params)
     respond_with(@events)
   end
 
@@ -18,6 +20,7 @@ class EventsController < ApplicationController
   end
 
   def edit
+
   end
 
   def create
