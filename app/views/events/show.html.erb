@@ -33,15 +33,13 @@
                 </div>
                 <div class="col-md-10">
                   <h2 class="custom-heading"><%= @event.title %></h2>
-                  <h4 class="custom-heading">{{selectedEvent.group}}</h4>
                   <p><%= @event.description %></p>
                   <p>
                     <em>
                       <%= @event.starts_at.strftime("%A, %B %d, %Y") %><br />
                       <%= @event.starts_at.strftime(" %I:%M %p") %> - <%= @event.ends_at.strftime(" %I:%M %p") %><br />
-                      {{selectedEvent.location}}<br />
                       <!--<a popover-placement="right" popover="Sample text<br />Sample text" popover-title="Members Going" href>{{selectedEvent.rsvps}} Members Going</a>-->
-                      <a  data-toggle="popover" title="Members Going" data-content="[45] members going">[45] Members Going</a>
+                      <a data-toggle="popover" title="Members Going" data-content="[45] members going">[45] Members Going</a>
                     </em>
                   </p>
                 </div>
