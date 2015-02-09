@@ -16,6 +16,11 @@ Rails.application.routes.draw do
   get 'contact' => 'welcome#contact'
   get 'privacy' => 'welcome#privacy'
   get 'tos' => 'welcome#tos'
+  get 'dashboard-settings' => 'welcome#dashboard-settings'
+  get 'dashboard-settings-step-1' => 'welcome#dashboard-settings-step-1'
+  get 'my-groups' => 'welcome#my-groups'
+  get 'my-events' => 'welcome#my-events'
+  get 'created-events' => 'welcome#created-events'
 
   root to: 'welcome#index'
   get 'welcome/index'
