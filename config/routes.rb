@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'contact' => 'welcome#contact'
   get 'privacy' => 'welcome#privacy'
   get 'tos' => 'welcome#tos'
+  get 'login' => 'welcome#login'
   get 'dashboard-settings' => 'welcome#dashboard-settings'
   get 'dashboard-settings-step-1' => 'welcome#dashboard-settings-step-1'
   get 'my-groups' => 'welcome#my-groups'
