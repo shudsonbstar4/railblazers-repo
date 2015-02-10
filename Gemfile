@@ -49,6 +49,8 @@ gem "bootstrap_form"
 gem "kaminari"
 gem "foreigner"
 gem "rolify"
+gem "private_pub"
+gem "thin"
 group :development, :test do
   gem "rspec-rails"
   gem "guard-rspec"

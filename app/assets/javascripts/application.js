@@ -15,3 +15,6 @@
 //= require_tree .
 //= require bootstrap-sprockets
 //= require app.js
+//= require private_pub
+//= require chat
+//= require turbolinks
