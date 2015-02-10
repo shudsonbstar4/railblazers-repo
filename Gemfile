@@ -44,6 +44,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'rails_12factor', group: :production
 
 
 gem "unicorn"
