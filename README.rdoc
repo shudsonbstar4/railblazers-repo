@@ -1,3 +1,5 @@
+2/9/15 - Chat APP Addition
+
 == README
 
 This README would normally document whatever steps are necessary to get the
